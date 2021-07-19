@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{route('route1')}}">View1</a>
+                <a class="navbar-brand" href="{{ route('route1') }}">View1</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -21,18 +21,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="{{route('route2')}}">View2</a>
-                        <a class="nav-link active" href="{{route('route3')}}">View3</a>
+                        <a class="nav-link {{request()->is('view2')?'active':''}}" href="{{ route('route2') }}">View2</a>
+                        <a class="nav-link {{request()->is('view3')?'active':''}}" href="{{ route('route3') }}">View3</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <main class="mt-5">
+    <main class="">
         @yield('main')
     </main>
-
+    <footer class="bg-light text-center text-lg-start fixed-bottom">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">BLAXION</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
-
 </html>
