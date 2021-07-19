@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\v1Controller;
+use App\Http\Controllers\v2Controller;
+use App\Http\Controllers\v3Controller;
+use App\Http\Controllers\XController;
 use Illuminate\Support\Facades\Route;
+
+use function Ramsey\Uuid\v1;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('view1');
-})->name('route1');
+Route::get('/',[v1Controller::class,'index'])->name('route1');
 
-Route::get('/view2', function () {
-    return view('pages.view2');
-})->name('route2');
+Route::get('/view2',[v2Controller::class,'index'] )->name('route2');
 
-Route::get('/view3', function () {
-    return view('pages.view3');
-})->name('route3');
+Route::get('/view3',[v3Controller::class,'index'])->name('route3');
+
+Route::get('/viewX',[XController::class,'index'])->name('routeX');

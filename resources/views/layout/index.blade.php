@@ -23,6 +23,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link {{request()->is('view2')?'active':''}}" href="{{ route('route2') }}">View2</a>
                         <a class="nav-link {{request()->is('view3')?'active':''}}" href="{{ route('route3') }}">View3</a>
+                        <a class="nav-link {{request()->is('viewX')?'active':''}}" href="{{ route('routeX') }}">ViewX</a>
                     </div>
                 </div>
             </div>
